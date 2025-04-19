@@ -1,5 +1,5 @@
 import cn from 'classnames'
-import { NewsStyleProps } from 'common/@components/news-list'
+import { NewsStyleProps } from 'common/components/news-list'
 import { News } from 'common/api/news'
 import React from 'react'
 import { FormattedDate } from 'react-intl'

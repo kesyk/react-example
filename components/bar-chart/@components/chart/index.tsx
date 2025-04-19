@@ -1,13 +1,13 @@
-import { Adapt } from 'common/@components/adapt'
-import { TradeGateBarFeed } from 'common/@components/bar-chart/@components/chart/bar-feeds/trade-gate-bar-feed'
+import { Adapt } from 'common/components/adapt'
+import { TradeGateBarFeed } from 'common/components/bar-chart/components/chart/bar-feeds/trade-gate-bar-feed'
 import {
   chartConfig,
   longPriceCurrencyPairs
-} from 'common/@components/bar-chart/@components/chart/config'
-import { ControlButton } from 'common/@components/bar-chart/@components/control-button'
-import { Hud } from 'common/@components/bar-chart/@components/hud'
-import { ChartTooltip } from 'common/@components/bar-chart/@components/tooltip'
-import { T } from 'common/@components/t'
+} from 'common/components/bar-chart/components/chart/config'
+import { ControlButton } from 'common/components/bar-chart/components/control-button'
+import { Hud } from 'common/components/bar-chart/components/hud'
+import { ChartTooltip } from 'common/components/bar-chart/components/tooltip'
+import { T } from 'common/components/t'
 import { commonApi } from 'common/api'
 import { CurrencyPair } from 'common/currencies'
 import {

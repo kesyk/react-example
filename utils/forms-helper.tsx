@@ -1,4 +1,4 @@
-import { T } from 'common/@components/t'
+import { T } from 'common/components/t'
 import { ApiErrorData } from 'common/api/error/api-error'
 import { ErrorsMapList, FormTransformers } from 'forms-builder'
 import { FieldData } from 'forms-builder/dist'

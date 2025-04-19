@@ -1,4 +1,4 @@
-import { T } from 'common/@components/t'
+import { T } from 'common/components/t'
 import { FileField, FileUploaderTheme } from 'common/ui/form/file-field'
 import { PopoverAlignment } from 'common/ui/popover'
 import {

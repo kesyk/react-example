@@ -1,4 +1,4 @@
-import { adaptIs } from 'common/@components/adapt'
+import { adaptIs } from 'common/components/adapt'
 import { AllowedCurrencyPair } from 'common/currencies'
 
 const currenciesWithCandles: AllowedCurrencyPair[] = [

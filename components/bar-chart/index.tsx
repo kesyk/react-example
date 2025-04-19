@@ -1,5 +1,5 @@
-import { Adapt } from 'common/@components/adapt'
-import { BarChartMobile } from 'common/@components/bar-chart/mobile'
+import { Adapt } from 'common/components/adapt'
+import { BarChartMobile } from 'common/components/bar-chart/mobile'
 import { CurrencyPair } from 'common/currencies'
 import React from 'react'
 import { Chart } from './@components/chart'

@@ -1,5 +1,5 @@
-import { chartConfig } from 'common/@components/bar-chart/@components/chart/config'
-import { T } from 'common/@components/t'
+import { chartConfig } from 'common/components/bar-chart/components/chart/config'
+import { T } from 'common/components/t'
 import { CurrencyPair } from 'common/currencies'
 import {
   CrosshairData,

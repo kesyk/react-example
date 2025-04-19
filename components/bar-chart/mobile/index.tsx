@@ -1,6 +1,6 @@
 import cn from 'classnames'
-import { Chart } from 'common/@components/bar-chart/@components/chart'
-import { T } from 'common/@components/t'
+import { Chart } from 'common/components/bar-chart/components/chart'
+import { T } from 'common/components/t'
 import { CurrencyPair } from 'common/currencies'
 import { Button } from 'common/ui/button'
 import React from 'react'

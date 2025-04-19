@@ -1,4 +1,4 @@
-import { T } from 'common/@components/t'
+import { T } from 'common/components/t'
 import React from 'react'
 import { Doc, DocTheme } from './doc'
 import theme from './theme.css'

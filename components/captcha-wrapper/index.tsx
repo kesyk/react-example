@@ -2,7 +2,7 @@ import cn from 'classnames'
 import {
   Captcha,
   CaptchaSizeProps
-} from 'common/@components/captcha-wrapper/@components/captcha'
+} from 'common/components/captcha-wrapper/components/captcha'
 import { Popover } from 'common/ui/popover'
 import { FormClass } from 'forms-builder'
 import React from 'react'

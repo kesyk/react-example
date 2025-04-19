@@ -1,6 +1,6 @@
 import cn from 'classnames'
-import { NewsItem } from 'common/@components/news-list/@components/item'
-import { T } from 'common/@components/t'
+import { NewsItem } from 'common/components/news-list/components/item'
+import { T } from 'common/components/t'
 import { DispatchProps } from 'common/redux/connect'
 import { fetchNews, navigateToPage, NewsStore } from 'common/redux/modules/news'
 import { Button } from 'common/ui/button'
