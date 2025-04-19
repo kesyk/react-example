@@ -1,0 +1,104 @@
+:root {
+  --box-bg-error-color: #fbe6e6;
+  --box-border-error-color: #db4040;
+  --icon-error-color: #db4040;
+  --icon-error-url: './images/error.svg';
+  --box-bg-processing-color: #e6f1fb;
+  --box-border-processing-color: #0086ff;
+  --icon-processing-color: #73bbfd;
+  --icon-processing-url: './images/processing.svg';
+  --box-bg-info-color: #fcf7c6;
+  --box-border-info-color: #47c6cc;
+  --icon-info-color: #cfbc00;
+  --icon-info-url: './images/info.svg';
+  --box-bg-success-color: #e6fceb;
+  --box-border-success-color: #38c185;
+  --icon-success-color: #8addb5;
+  --icon-success-url: './images/success.svg';
+}
+
+@define-mixin icon $url, $fillColor {
+  & .icon {
+    background-image: svg-load(
+      $url,
+      fill = var($fillColor),
+      stroke = var($fillColor)
+    );
+  }
+}
+
+
+.message {
+  display: flex;
+  margin: 0 0 1.2rem;
+  border-left: 0.2rem solid;
+  padding: 1rem 3.2rem 0.8rem 1.4rem;
+  color: #505050;
+  font-size: 1.4rem;
+  min-height: 8rem;
+}
+
+.icon-wrapper {
+  display: flex;
+  flex: 6.2rem 0 0;
+  align-items: center;
+}
+
+.icon {
+  background: 50% 50% no-repeat;
+  background-size: contain;
+  width: 4.8rem;
+  height: 4.8rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  margin: auto 0;
+  width: 100%;
+}
+
+.title,
+.text {
+  line-height: 1.3;
+  margin: 1em 0;
+}
+
+.title {
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.is-error {
+  &.message {
+    border-color: var(--box-border-error-color);
+    background: var(--box-bg-error-color);
+  }
+
+  @mixin icon './images/error.svg', --icon-error-color {}
+}
+
+.is-processing {
+  &.message {
+    border-color: var(--box-border-processing-color);
+    background: var(--box-bg-processing-color);
+  }
+
+  @mixin icon './images/processing.svg', --icon-processing-color {}
+}
+
+.is-info {
+  background-color: var(--box-bg-info-color);
+  border-color: var(--box-border-info-color);
+
+  @mixin icon './images/info.svg', --icon-info-color {}
+}
+
+.is-success {
+  &.message {
+    border-color: var(--box-border-success-color);
+    background: var(--box-bg-success-color);
+  }
+
+  @mixin icon './images/success.svg', --icon-success-color {}
+}

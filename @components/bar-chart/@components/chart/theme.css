@@ -1,0 +1,275 @@
+:root {
+  --border-color: #c7c7c7;
+  --border-zoom-color: #cdcdcd;
+  --background-color: #e3e3e3;
+  --white: #fff;
+  --top-controls-mob-color: #ededed;
+  --select-border: #b9b9b9;
+  --active-select-item: #464646;
+  --item-select-bg: #f5f5f5;
+}
+
+.chart-container-wrap {
+  border: 0.1rem solid var(--border-color);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  & .chart-container {
+    width: 100%;
+    height: 38rem;
+    position: relative;
+  }
+
+  & .top-controls {
+    border-bottom: 0.1rem solid var(--border-color);
+    background: var(--background-color);
+    padding: 0.6rem;
+    margin-bottom: 0.2rem;
+    display: flex;
+
+    &.buttons {
+      display: flex;
+    }
+  }
+
+  & .zoom-btn {
+    padding-left: 1rem;
+    border-left: 0.1rem solid var(--border-zoom-color);
+  }
+}
+
+.loader {
+  position: static;
+}
+
+.select {
+  padding: 0 0.8rem 0 0.1rem;
+  cursor: pointer;
+  border: 0.05rem solid var(--select-border);
+  border-radius: 0.3rem;
+  color: var(--active-select-item);
+  position: relative;
+  width: 2.9rem;
+  height: 1.8rem;
+  background: var(--white);
+  font-size: 0.8rem;
+  line-height: 1.7rem;
+  text-align: center;
+
+  &::before {
+    display: none;
+  }
+  &::after {
+    margin: 0;
+    width: 0;
+    height: 0;
+    border: 0 solid transparent;
+    border-left-width: 0.25rem;
+    border-right-width: 0.25rem;
+    border-top: 0.35rem solid var(--active-select-item);
+    transform: none !important;
+    right: 0.3rem;
+    top: 0.7rem;
+  }
+}
+
+.wrapper {
+  position: relative;
+
+  &.is-active {
+    & .select {
+      background: var(--active-select-item);
+      color: var(--white);
+
+      &::after {
+        border-top: 0.35rem solid var(--white);
+      }
+    }
+  }
+}
+
+.item {
+  border: 0.05rem solid var(--select-border);
+  border-radius: 0.3rem;
+  background: var(--item-select-bg);
+  font-size: 0.7rem;
+  line-height: 1.5rem;
+  text-align: center;
+  width: 2.4rem;
+  height: 1.5rem;
+  margin-top: 0.4rem;
+
+  &:first-child {
+    margin-top: 0;
+  }
+  &:hover {
+    background: none;
+  }
+}
+
+.selected-item {
+  background: var(--active-select-item);
+  color: var(--white);
+}
+
+.dropdown {
+  position: absolute;
+  top: -1.8rem;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 100;
+  overflow-y: auto;
+  background: var(--top-controls-mob-color);
+  border-radius: 0.3rem;
+  border: 0.05rem solid var(--select-border);
+  padding: 0.2rem;
+}
+
+@mixin mq-phone {
+  .chart-container-wrap {
+    background: var(--white);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 9999;
+    width: 100%;
+
+    & .chart-container {
+      height: calc(100% - 10.4rem);
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 5.4rem;
+      bottom: 2.5rem;
+    }
+
+    & .top-controls {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 5.4rem;
+      padding: 0.8rem;
+      justify-content: space-between;
+      border-bottom: 0.2rem solid var(--border-color);
+    }
+
+    & .btn-close {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 5rem;
+      font-size: 2.1rem;
+      line-height: 3.2rem;
+      border-radius: 0;
+    }
+
+    & .zoom-btn {
+      padding-left: 0;
+      border-left: 0.2rem solid var(--border-zoom-color);
+      text-align: right;
+    }
+  }
+
+  .select {
+    padding: 0 1.6rem 0 0.2rem;
+    border: 0.1rem solid var(--select-border);
+    border-radius: 0.6rem;
+    width: 6rem;
+    height: 3.8rem;
+    font-size: 1.6rem;
+    line-height: 3.6rem;
+
+    &::after {
+      border-left-width: 0.5rem;
+      border-right-width: 0.5rem;
+      border-top: 0.7rem solid var(--active-select-item);
+      right: 0.6rem;
+      top: 1.5rem;
+    }
+  }
+
+  .wrapper {
+    &.is-active {
+      & .select {
+        &::after {
+          border-top: 0.7rem solid var(--white);
+        }
+      }
+    }
+  }
+
+  .item {
+    border: 0.1rem solid var(--select-border);
+    border-radius: 0.6rem;
+    font-size: 1.5rem;
+    line-height: 3.2rem;
+    width: 5rem;
+    height: 3.2rem;
+    margin-top: 0.8rem;
+  }
+
+  .dropdown {
+    top: -3.6rem;
+    border-radius: 0.6rem;
+    border: 0.1rem solid var(--select-border);
+    padding: 0.4rem;
+    transform: translateY(7.5rem) !important;
+    max-height: none !important;
+  }
+
+  :global .account {
+    & :local {
+      & .chart-container-wrap {
+        & .top-controls {
+          height: 6.1rem;
+          padding: 0.8rem;
+        }
+
+        & .chart-container {
+          top: 6.1rem;
+          height: calc(100% - 11.8rem);
+        }
+
+        & .btn-close {
+          height: 5.7rem;
+          font-size: 2.4rem;
+          line-height: 3.8rem;
+        }
+
+        & .select {
+          width: 6.8rem;
+          height: 4.3rem;
+          font-size: 1.8rem;
+          line-height: 4.1rem;
+
+          &::after {
+            top: 1.8rem;
+          }
+        }
+
+        & .item {
+          width: 6rem;
+          height: 4rem;
+        }
+
+        & .dropdown {
+          top: -3rem;
+          padding: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 367px){
+  .btn{
+    margin-left: 0.55rem;
+  }
+}

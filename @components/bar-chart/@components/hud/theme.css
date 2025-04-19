@@ -1,0 +1,38 @@
+.display {
+  position: absolute;
+  top: 4.5rem;
+  left: 1rem;
+  z-index: 10;
+  pointer-events: none;
+  text-align: left;
+}
+
+.list {
+  padding: 0;
+  margin: 0;
+
+  & li {
+    display: inline-block;
+    padding: 0 0.5rem 0 0;
+    white-space: nowrap;
+  }
+}
+
+@mixin mq-phone {
+  .display {
+    top: 7.2rem;
+    left: 0.7rem;
+    font-size: 1.1rem;
+    max-width: calc(100% - 7.5rem);
+  }
+
+  :global .account {
+    & :local {
+      & .display {
+        top: 8rem;
+        font-size: 1.3rem;
+        color: #050505;
+      }
+    }
+  }
+}

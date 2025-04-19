@@ -1,0 +1,45 @@
+:root {
+  --text-color: #505050;
+  --dropdown-border-color: #ddebed;
+  --select-border-color: #2c9ef5;
+  --item-hover-background-color: #e7f3fa;
+}
+
+.select {
+  border-bottom: solid 0.1rem var(--select-border-color);
+  color: var(--select-border-color);
+  padding: 0.2rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    margin: -0.9rem;
+  }
+}
+
+.item {
+  height: 3rem;
+  background: white;
+  padding-left: 1rem;
+  display: flex;
+  align-items: center;
+  color: #7b9bb3;
+  font-size: 1.4rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--item-hover-background-color);
+    border-left: solid 0.4rem var(--select-border-color);
+    padding-left: 0.6rem;
+  }
+}
+
+.selected-item {
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.dropdown {
+  border: solid 0.1rem var(--dropdown-border-color);
+}

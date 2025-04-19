@@ -1,0 +1,8 @@
+@import '../vars';
+
+.staticText {
+  border: none;
+  margin-bottom: var(--margin-bottom);
+
+  @mixin base-input;
+}

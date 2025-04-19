@@ -1,0 +1,18 @@
+:root {
+  --border-color: #dedede;
+}
+
+.flag {
+  width: 1.8rem;
+  border: 0.1rem solid var(--border-color);
+  border-radius: 0.2rem;
+  vertical-align: middle;
+  display: inline-block;
+
+  & img {
+    outline: none;
+    display: block;
+    width: 100%;
+    vertical-align: top;
+  }
+}

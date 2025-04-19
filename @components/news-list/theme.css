@@ -1,0 +1,42 @@
+:root {
+  --border-color: #ced5d8;
+  --pager-bg: #f3f7fa;
+}
+
+.container {
+  @mixin container;
+}
+
+.header {
+  padding-bottom: 2.2rem;
+  border-bottom: 0.1rem solid var(--border-color);
+  margin-top: 2.5rem;
+
+  & .title {
+    font-size: 3rem;
+
+    &.light {
+      font-weight: 300;
+    }
+  }
+}
+
+.pager {
+  padding: 2.8rem 0;
+  background: var(--pager-bg);
+
+  & .box {
+    display: flex;
+    justify-content: flex-end;
+
+    & .btn-prev {
+      margin-right: 1.3rem;
+    }
+  }
+}
+
+@mixin mq-phone {
+  .header .title.light {
+    font-size: 2.4rem;
+  }
+}

@@ -1,0 +1,32 @@
+:root {
+  --wrapper-border-color: #c5dfe0;
+}
+
+.uploaded {
+  border-top: 0.1rem solid var(--wrapper-border-color);
+  border-bottom: 0.1rem solid var(--wrapper-border-color);
+  padding: 1.2rem 0 0;
+  margin: 0 0 4rem;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin: 0 0 1.8rem;
+}
+
+.list-wrapper {
+  margin: 0 1rem;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+@mixin mq-phone {
+  .list-wrapper {
+    margin: 0 -0.8rem;
+  }
+}

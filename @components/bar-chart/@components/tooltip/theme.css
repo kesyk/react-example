@@ -1,0 +1,30 @@
+.tooltip {
+  position: absolute;
+  right: auto;
+  pointer-events: none;
+  text-align: left;
+  background-color: #fff;
+  border: 0.1rem solid #c7c7c7;
+  color: #1e1e1e;
+  font-size: 1.1rem;
+  white-space: nowrap;
+  padding: 0.6rem;
+  z-index: 30;
+
+  & > div {
+    display: table-row;
+
+    & > div {
+      display: table-cell;
+
+      &:first-child {
+        font-weight: bold;
+        padding-right: 0.5rem;
+      }
+
+      &:last-child {
+        text-align: right;
+      }
+    }
+  }
+}

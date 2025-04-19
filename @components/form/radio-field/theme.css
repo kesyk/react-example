@@ -1,0 +1,72 @@
+@import '../vars';
+
+:root {
+  --color: #2c9ef5;
+  --bg-color: #fff;
+  --text-color: #adbdca;
+  --text-checked-color: #505050;
+}
+
+.radio {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--margin-bottom);
+}
+
+.icon {
+  position: relative;
+  flex-shrink: 0;
+  margin-right: 1.2rem;
+  border: 0.1rem solid var(--color);
+  border-radius: 100%;
+  cursor: pointer;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: var(--bg-color);
+
+  &::after {
+    display: block;
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    bottom: 0.3rem;
+    left: 0.3rem;
+    transform: scale(2.5);
+    transition: all 0.2s;
+    border-radius: 100%;
+    background: transparent;
+    content: '';
+    pointer-events: none;
+  }
+}
+
+.label {
+  transition: all 0.2s;
+  cursor: default;
+  color: var(--text-color);
+}
+
+.is-checked {
+  & .icon {
+    &::after {
+      transform: none;
+      background: var(--color);
+    }
+  }
+
+  & .label {
+    color: var(--text-checked-color);
+  }
+}
+
+.is-focused {
+  & .icon {
+    box-shadow: 0 0 1rem color(var(--color) alpha(1));
+  }
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}

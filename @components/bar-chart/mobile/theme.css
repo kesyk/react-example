@@ -1,0 +1,50 @@
+.btn-wrap {
+  padding: 2rem 1.5rem 2rem;
+}
+
+.btn-open-chart {
+  & span {
+    vertical-align: top;
+    display: inline-block;
+  }
+}
+
+.icon-chart {
+  background: svg-load('./images/icon_chart.svg') no-repeat;
+  background-size: cover;
+  display: inline-block;
+  margin-right: 2rem;
+  width: 4.2rem;
+  height: 3.5rem;
+  margin-top: 1rem;
+}
+
+@mixin mq-pc {
+  .chart-wrapper {
+    height: 38rem;
+    width: 100%;
+  }
+}
+
+@mixin mq-phone {
+  .chart-wrapper {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    z-index: 9999;
+    height: 100%;
+    width: 100%;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  :global html:not(.account) {
+    & :local {
+      & .btn-wrap {
+        padding-top: 0.3rem;
+        padding-bottom: 0.3rem;
+      }
+    }
+  }
+}

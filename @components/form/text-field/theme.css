@@ -1,0 +1,97 @@
+@import '../vars';
+
+.wrapper {
+  margin-bottom: var(--margin-bottom);
+}
+
+.input {
+  @mixin base-input;
+}
+
+.label {
+  @mixin base-input-label;
+
+  transition: all 0.15s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  @mixin mq-phone {
+    font-size: 1.2rem;
+  }
+}
+
+.error-icon {
+  position: absolute;
+  top: 50%;
+  right: 0.8rem;
+  transform: translateY(-50%);
+}
+
+.error-icon.has-other-icon {
+  right: 3.8rem;
+}
+
+.pass-icon {
+  position: absolute;
+  top: 50%;
+  right: 0.8rem;
+  display: block;
+  width: 1.8rem;
+  height: 1.6rem;
+  background-image: svg-load(
+    './images/no-watch.svg',
+    fill = var(--icon-pd-color)
+  );
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: background 0.1s ease-in;
+
+  &.disabled {
+    background-image: svg-load(
+      './images/watch.svg',
+      fill = var(--icon-pd-color)
+    );
+  }
+
+  &.has-other-icon {
+    right: 3.8rem;
+  }
+}
+
+.has-value {
+  & > .label {
+    opacity: 0;
+
+    /* transform-origin: 0 50%;
+    transform: translate(.3rem, -3rem) scale(.7, .7); */
+  }
+}
+
+.input:-webkit-autofill + .label {
+  opacity: 0;
+}
+
+.input:not([value='']) + .label {
+  opacity: 0;
+}
+
+.is-pass {
+  font-family: 'password';
+  font-size: 1.4rem;
+  letter-spacing: 0.2rem;
+  font-stretch: normal;
+  -webkit-text-security: disc;
+}
+
+.info {
+  position: absolute;
+  z-index: 200;
+  right: 0.9rem;
+  top: 50%;
+  margin: 0;
+  transform: translateY(-50%);
+}

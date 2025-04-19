@@ -1,0 +1,42 @@
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 5rem;
+
+  & > div {
+    &:nth-child(1) {
+      @mixin circles 5rem, outer;
+    }
+    &:nth-child(2) {
+      @mixin circles 3rem, inner;
+
+      position: relative;
+      top: -4rem;
+    }
+  }
+}
+
+@keyframes outer {
+  0% {
+    transform: rotate(160deg);
+    opacity: 0;
+  }
+  50% {
+    transform: rotate(120deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(-320deg);
+    opacity: 0;
+  }
+}
+@keyframes inner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

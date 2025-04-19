@@ -1,0 +1,62 @@
+:root {
+  --popover-offset: 0.6rem;
+  --popover-horizontal-offset: 0.4rem;
+  --arrow-size: 0.6rem;
+  --arrow-offset: 0.4rem;
+  --error-bg-color: #a53c3c;
+  --warn-bg-color: #d5ba00;
+  --font-color: #fff;
+  --info-bg: #fffdd6;
+  --info-border: #e0dc94;
+  --info-color: #505050;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.popover {
+  @mixin popover;
+
+  position: absolute;
+  z-index: 110;
+  border-radius: 0.2rem;
+  background: var(--error-bg-color);
+  border: 0.1rem solid var(--error-bg-color);
+  padding: 1.2rem 1.4rem;
+  color: var(--font-color);
+  font-size: 1.3rem;
+  line-height: 1.4;
+  box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.175);
+  text-align: left;
+
+  &::after {
+    display: block;
+    position: absolute;
+    background: var(--error-bg-color);
+    content: '';
+  }
+}
+
+.is-warn {
+  & .popover {
+    background: var(--warn-bg-color);
+    border-color: var(--warn-bg-color);
+
+    &::after {
+      background: var(--warn-bg-color);
+    }
+  }
+}
+
+.is-info {
+  & .popover {
+    color: var(--info-color);
+    background: var(--info-bg);
+    border: 0.1rem solid var(--info-border);
+
+    &::after {
+      background: var(--info-bg);
+    }
+  }
+}

@@ -1,0 +1,43 @@
+:root {
+  --even-bg: #f3f7fa;
+  --even-bg-light: #f0f0f0;
+  --date-color: #728b94;
+}
+
+.container {
+  @mixin container;
+}
+
+.item {
+  padding: 3.5rem 0;
+
+  &:nth-child(even) {
+    background-color: var(--even-bg);
+  }
+
+  & .title {
+    font-size: 1.8rem;
+  }
+
+  & .date {
+    font-size: 1.3rem;
+    color: var(--date-color);
+  }
+
+  & .body {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    font-weight: 300;
+    text-align: justify;
+
+    & a {
+      @mixin link;
+    }
+  }
+
+  &.light {
+    &:nth-child(even) {
+      background-color: var(--even-bg-light);
+    }
+  }
+}

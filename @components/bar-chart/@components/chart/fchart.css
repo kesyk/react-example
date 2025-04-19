@@ -1,0 +1,138 @@
+:global {
+  & .fchart {
+    font-size: 1rem;
+    user-select: none;
+
+    & path {
+      fill: none;
+      stroke-width: 0.1rem;
+    }
+
+    & .axis {
+      & path {
+        stroke: #050505;
+        shape-rendering: unset;
+      }
+
+      & line {
+        stroke: #050505;
+        stroke-width: 0.1rem;
+        stroke-opacity: 0.3;
+        shape-rendering: crispEdges;
+      }
+    }
+
+    & .grid {
+      & line {
+        stroke: rgba(0, 0, 0, 0.07);
+        stroke-width: 0.1rem;
+        shape-rendering: crispEdges;
+      }
+
+      & path {
+        stroke-width: 0;
+      }
+    }
+
+    & .plot {
+      &.candlestick {
+        & path,
+        & rect {
+          stroke: #000;
+          stroke-width: 0.1rem;
+          shape-rendering: optimizeSpeed;
+        }
+
+        & .up {
+          fill: white;
+        }
+
+        & .equal,
+        & .down {
+          fill: black;
+        }
+      }
+
+      &.volumes path {
+        fill: black;
+        opacity: 0.1;
+        shape-rendering: crispEdges;
+      }
+
+      &.mountains {
+        & .body {
+          fill: url(#gradient-vertical);
+        }
+
+        & .border {
+          stroke-width: 0.1rem;
+          stroke: #66cac4;
+        }
+      }
+    }
+
+    & .tick text {
+      font-size: 1rem;
+      color: #050505;
+    }
+
+    & .label {
+      &.price.current {
+        & .label path {
+          fill: #206a8f;
+        }
+        & .label text {
+          fill: #fff;
+        }
+        & .wire {
+          stroke: rgba(32, 106, 143, 0.8);
+          stroke-width: 0.1rem;
+          stroke-dasharray: 5;
+          shape-rendering: crispedges;
+        }
+      }
+
+      &.time.mouse {
+        & path {
+          fill: black;
+        }
+        & text {
+          fill: white;
+        }
+      }
+
+      &.price.mouse {
+        & path {
+          fill: black;
+        }
+
+        & text {
+          fill: white;
+        }
+      }
+    }
+
+    & .mouse-crosshair {
+      & path {
+        stroke: #333;
+        stroke-width: 0.1rem;
+        shape-rendering: crispEdges;
+        opacity: 0.5;
+      }
+    }
+
+    & .crosshair {
+      cursor: crosshair;
+    }
+  }
+}
+
+@mixin mq-phone {
+  :global {
+    & .account .fchart {
+      & .tick text {
+        font-size: 1.15rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,199 @@
+:root {
+  --item-width: 3.6rem;
+  --item-height: 3.4rem;
+  --item-color: #555;
+  --item-hover-color: #fff;
+  --item-light-color: #eef7f4;
+  --item-disabled-color: #aba9ac;
+  --active-color: #2d9ef6;
+  --day-name-color: #000;
+  --select-dropdown-border-color: rgba(0, 0, 0, 0.075);
+}
+
+.calendar {
+  width: calc(var(--item-width) * 7 + 0.2rem);
+}
+
+.options {
+  display: flex;
+  margin: 0 0 1.2rem;
+  padding: 0;
+  color: var(--active-color);
+  font-size: 1.4rem;
+
+  & > .option:last-child {
+    margin-left: auto;
+  }
+}
+
+.daysNames,
+.days {
+  display: flex;
+  margin: 0 auto;
+}
+
+.daysNames > .name,
+.days > .day {
+  width: var(--item-width);
+  height: var(--item-height);
+  text-align: center;
+  line-height: var(--item-height);
+  font-size: 1.3rem;
+}
+
+.daysNames {
+  & > .name {
+    color: var(--day-name-color);
+  }
+}
+
+.days {
+  flex: 1 0 auto;
+  flex-wrap: wrap;
+
+  & > .day {
+    border-radius: 0.2rem;
+    color: var(--item-color);
+
+    &:not(.disabled):hover {
+      background: var(--active-color);
+      cursor: pointer;
+      color: var(--item-hover-color);
+    }
+
+    &.selected {
+      background: var(--active-color);
+      color: var(--item-hover-color);
+    }
+
+    &.light {
+      background: var(--item-light-color);
+    }
+
+    &.disabled {
+      color: var(--item-disabled-color);
+    }
+  }
+}
+
+.select-months {
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  padding-left: 1.1rem;
+  margin-left: -0.4rem;
+}
+
+.select-dropdown-months {
+  composes: dropdown from '../../form/select-field/theme';
+  border: 0.1rem solid var(--select-dropdown-border-color);
+  margin-left: -0.5rem;
+  width: unset;
+  right: unset;
+}
+
+.select-item-months {
+  composes: item from '../../form/select-field/theme';
+}
+
+.select-years {
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  padding-left: 1.1rem;
+  margin-left: -0.4rem;
+}
+
+.select-dropdown-years {
+  composes: dropdown from '../../form/select-field/theme';
+  border: 0.1rem solid var(--select-dropdown-border-color);
+  margin-left: -0.5rem;
+}
+
+.select-item-years {
+  composes: item from '../../form/select-field/theme';
+}
+
+@mixin mq-phone {
+  .daysNames > .name,
+  .days > .day {
+    font-size: 2.4rem;
+    width: 6.6rem;
+    height: 6rem;
+    line-height: 6rem;
+  }
+
+  .select-item-months,
+  .select-item-years {
+    font-size: 2.7rem;
+    padding: 1.2rem 2.5rem 1.2rem 1rem;
+  }
+
+  .options{
+    font-size: 2.7rem
+  }
+
+  .select-months {
+    padding-top: 0.5rem;
+    padding-bottom: 0.4rem;
+    padding-left: 1.3rem;
+    margin-left: -0.4rem;
+  }
+
+  .calendar {
+    width: calc(6.6rem * 7 + 0.2rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .daysNames > .name,
+  .days > .day {
+    font-size:1.6rem;
+    width: 4.6rem;
+    height: 4.3rem;
+    line-height: 4.3rem;
+  }
+
+  .select-item-months,
+  .select-item-years {
+    font-size: 1.6rem;
+    padding: 1.5rem 2rem 1rem 1rem;
+  }
+
+  .options {
+    font-size: 1.8rem;
+  }
+
+  .select-months {
+    padding-top: 0.5rem;
+    padding-bottom: 0.4rem;
+    padding-left: 1.3rem;
+    margin-left: -0.4rem;
+  }
+
+  .calendar {
+    width: calc(4.6rem * 7 + 0.2rem);
+  }
+}
+
+@media (max-width: 450px) {
+  .daysNames > .name,
+  .days > .day {
+    font-size:1.2rem;
+    width: 3.4rem;
+    height: 3.2rem;
+    line-height: 3.2rem;
+  }
+
+  .select-item-months,
+  .select-item-years {
+    font-size: 1.3rem;
+    padding: 0.7rem 2rem 0.7rem 0.8rem;
+  }
+
+  .options {
+    font-size: 1.2rem;
+  }
+
+  .calendar {
+    width: calc(3.4rem * 7 + 0.2rem);
+  }
+}

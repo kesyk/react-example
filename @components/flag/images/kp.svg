@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 216 144" style="enable-background:new 0 0 216 144;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#D24D5C;}
+	.st2{fill:#4C73B6;}
+	.st3{fill:#FFFFFF;stroke:#000000;stroke-width:0.25;stroke-linejoin:bevel;}
+	.st4{fill:#D24D5C;stroke:#000000;stroke-width:0.25;}
+</style>
+<g>
+	<rect x="0" y="26.7" class="st0" width="216" height="8.7"/>
+	<rect x="0" y="109.6" class="st0" width="216" height="8.7"/>
+</g>
+<rect x="0" y="35.4" class="st1" width="216" height="74.2"/>
+<g>
+	<rect x="0" y="0.5" class="st2" width="216" height="26.2"/>
+	<rect x="0" y="118.3" class="st2" width="216" height="26.2"/>
+</g>
+<ellipse transform="matrix(0.7737 -0.6335 0.6335 0.7737 -31.1453 57.8147)" class="st3" cx="65.4" cy="72.5" rx="31" ry="31"/>
+<polygon class="st4" points="65.4,45.9 59.4,64.3 39.9,64.3 55.8,75.8 49.7,94.2 65.4,82.8 81.1,94.2 75.1,75.6 90.8,64.4 
+	71.4,64.4 "/>
+</svg>

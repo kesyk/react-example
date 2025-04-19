@@ -1,0 +1,212 @@
+:root {
+  --color: #fff;
+  --primary-border-color: #2787d0;
+  --primary-bg-color: #2c9ef5;
+  --primary-hover-bg-color: #40acff;
+  --primary-active-bg-color: #2688d3;
+  --cancel-bg-color: #e23132;
+  --cancel-hover-bg-color: #f53536;
+  --cancel-active-bg-color: #d32e2f;
+  --warn-bg-color: #ea5b0c;
+  --warn-hover-bg-color: #ff630d;
+  --warn-active-bg-color: #d9540b;
+  --ok-bg-color: #1bc285;
+  --ok-border-color: #17a571;
+  --ok-border-bg-color: rgba(27, 194, 133, 0.05);
+  --primary-border-color: #278dda;
+  --primary-border-bg-color: rgba(39, 141, 218, 0.05);
+  --ok-hover-bg-color: #1ed592;
+  --ok-active-bg-color: #18af78;
+  --disabled-bg-color: #969696;
+  --focused-outline-alpha: 30%;
+  --focused-box-shadow: 0 0 0 0.3rem;
+}
+
+.btn {
+  border: 0 solid var(--primary-border-color);
+  border-radius: 0.2rem;
+  cursor: pointer;
+  padding: 0 3.2rem;
+  height: 3.6rem;
+  line-height: 3.6rem;
+  color: var(--color);
+  font-size: 1.5rem;
+  transition: all 0.15s;
+  min-width: 9.5rem;
+  &:focus {
+    z-index: 1;
+    outline: none;
+  }
+
+  &.is-primary {
+    background: var(--primary-bg-color);
+
+    &:focus {
+      box-shadow: var(--focused-box-shadow)
+        color(var(--primary-bg-color) alpha(var(--focused-outline-alpha)));
+    }
+  }
+
+  &.is-cancel {
+    background: var(--cancel-bg-color);
+
+    &:focus {
+      box-shadow: var(--focused-box-shadow)
+        color(var(--cancel-bg-color) alpha(var(--focused-outline-alpha)));
+    }
+  }
+
+  &.is-warn {
+    background: var(--warn-bg-color);
+
+    &:focus {
+      box-shadow: var(--focused-box-shadow)
+        color(var(--warn-bg-color) alpha(var(--focused-outline-alpha)));
+    }
+  }
+
+  &.is-ok {
+    background: var(--ok-bg-color);
+    &:focus {
+      box-shadow: var(--focused-box-shadow)
+        color(var(--ok-bg-color) alpha(var(--focused-outline-alpha)));
+    }
+  }
+
+  &.is-ok-support {
+    background: var(--ok-bg-color);
+    margin-left: 2rem;
+
+    &:focus {
+      box-shadow: var(--focused-box-shadow)
+        color(var(--ok-bg-color) alpha(var(--focused-outline-alpha)));
+    }
+  }
+
+  &.is-ok-border {
+    background: var(--ok-border-bg-color);
+    border: 0.1rem solid var(--ok-border-color);
+    color: var(--ok-border-color);
+    height: 3.6rem;
+    line-height: 3.4rem;
+
+    &:focus {
+      box-shadow: var(--focused-box-shadow)
+        color(var(--ok-border-color) alpha(var(--focused-outline-alpha)));
+    }
+  }
+
+  &.is-primary-border {
+    background: var(--primary-border-bg-color);
+    border: 0.1rem solid var(--primary-border-color);
+    color: var(--primary-border-color);
+    height: 3.6rem;
+    line-height: 3.4rem;
+
+    &:focus {
+      box-shadow: var(--focused-box-shadow)
+        color(var(--primary-border-color) alpha(var(--focused-outline-alpha)));
+    }
+  }
+
+  &:disabled,
+  &.is-disabled {
+    cursor: default;
+    background: var(--disabled-bg-color) !important;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  &:hover:not(:disabled):not(.is-disabled):not(.is-checked) {
+    &.is-primary {
+      background: var(--primary-hover-bg-color);
+    }
+
+    &.is-cancel {
+      background: var(--cancel-hover-bg-color);
+    }
+
+    &.is-warn {
+      background: var(--warn-hover-bg-color);
+    }
+
+    &.is-ok {
+      background: var(--ok-hover-bg-color);
+    }
+
+    &.is-ok-border {
+      background: var(--ok-border-color);
+      color: var(--color);
+    }
+
+    &.is-primary-border {
+      background: var(--primary-border-color);
+      color: var(--color);
+    }
+  }
+
+  &:active:not(:disabled):not(.is-disabled):not(.is-checked),
+  &.is-pressed:not(:disabled):not(.is-disabled):not(.is-checked) {
+    &.is-primary {
+      background: var(--primary-active-bg-color);
+    }
+
+    &.is-cancel {
+      background: var(--cancel-active-bg-color);
+    }
+
+    &.is-warn {
+      background: var(--warn-active-bg-color);
+    }
+
+    &.is-ok {
+      background: var(--ok-active-bg-color);
+    }
+  }
+
+  &.is-checked {
+    background: none;
+    border: 0.1rem solid;
+    line-height: 3.4rem;
+
+    &.is-primary {
+      border-color: var(--primary-bg-color);
+      color: var(--primary-bg-color);
+    }
+
+    &.is-cancel {
+      border-color: var(--cancel-bg-color);
+      color: var(--cancel-bg-color);
+    }
+
+    &.is-ok {
+      border-color: var(--ok-bg-color);
+      color: var(--ok-bg-color);
+    }
+  }
+}
+
+@mixin mq-phone {
+  .btn {
+    &.is-ok-support {
+      margin: 2rem 1rem 1.2rem;
+    }
+  }
+
+  .mq-100 {
+    &.btn {
+      width: 100%;
+      height: 6rem;
+      line-height: 6rem;
+      font-size: 2.1rem;
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  .btn {
+    padding: 0 1.8rem;
+  }
+}
